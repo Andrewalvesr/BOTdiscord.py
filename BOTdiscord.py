@@ -32,10 +32,10 @@ async def on_member_join(member):
         )
 
 
-jogos_forca = {} #criação do jogo da forca no BOT
+jogos_forca = {}
 paineis_cargos = {}
 
-categorias = { #criação das categorias da forca
+categorias = {
     "animais": [
         ("galinha", "Ave que bota ovos"),
         ("cobra", "Réptil sem pernas"),
@@ -229,7 +229,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-@bot.tree.command( #criaçao da função "EMBEDS"
+@bot.tree.command( 
     name="embed",
     description="Criar uma embed"
 )
@@ -241,7 +241,7 @@ async def embed(
     embed = discord.Embed(
         title=titulo,
         description=descricao,
-        color=discord.Color.purple() #cor do embend
+        color=discord.Color.purple() 
     )
 
     embed.set_footer(
@@ -252,7 +252,7 @@ async def embed(
         embed=embed
     )
 
-@bot.tree.command( #criação da ação de cargo por reação
+@bot.tree.command( 
     name="painel_cargos",
     description="Cria um painel de cargos por reação"
 )
@@ -357,7 +357,7 @@ async def on_raw_reaction_remove(payload):
         await membro.remove_roles(cargo)
 
 
-@bot.command() #criação da função de tocar musicas
+@bot.command() 
 async def tocar(ctx, *, busca):
     if ctx.author.voice is None:
         await ctx.send("Entre em uma call primeiro.")
